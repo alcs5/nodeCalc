@@ -60,11 +60,6 @@
         const inp = document.querySelector('#inp');
 
         btn.addEventListener('click' , () => {
-            fetch(`https://conv-li.onrender.com/${parseInt(inp.value)}`)
-            .then((res) => res)
-            .then((data) => console.log(data))
-            .catch((err) => console.log(err));
-
             window.location.href = `https://conv-li.onrender.com/${parseInt(inp.value)}`;
         });
     </script>
