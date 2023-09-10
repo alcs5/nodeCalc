@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #000;
+        }
+        p {
+            color: #f00;
+        }
+        span {
+            color: #0f0;
+        }
+    </style>
+</head>
+<body>
+    <%if (isNaN(data)) {%>
+        <p>this is not a number</p>
+    <%} else {%>
+        <p><%=para%><span> km is </span><%=data%><span> mi </span></p>
+    <%}%>
+</body>
+</html>

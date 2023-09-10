@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>title is title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        li {
+            list-style: none;
+        }
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #000;
+        }
+        span {
+            color: #0f0;
+        }
+        input {
+            outline: none;
+            background-color: transparent;
+        }
+        input:valid {
+            color: #0f0;
+            border: 2px solid #0f0;
+        }
+        input:invalid {
+            color: #f00;
+            border: 2px solid #f00;
+        }
+        button {
+            border: 2px solid #0f0;
+            color: #0f0;
+            background-color: transparent;
+            cursor: pointer;
+        }
+        button:hover {
+            color: rgba(0 , 255 , 0 , .5);
+        }
+        main {
+            display: flex;
+            align-items: center;
+            gap: 33px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <input type="text" id="inp" pattern="^\d+$" required><span>km / mi</span><span><button id="btn">convert</button></span>
+    </main>
+    <script>
+        const btn = document.querySelector('#btn');
+        const inp = document.querySelector('#inp');
+
+        btn.addEventListener('click' , () => {
+            fetch(`https://conv-li.onrender.com/${parseInt(inp.value)}`)
+            .then((res) => res)
+            .then((data) => console.log(data))
+            .catch((err) => console.log(err));
+
+            window.location.href = `https://conv-li.onrender.com/${parseInt(inp.value)}`;
+        });
+    </script>
+</body>
+</html>
